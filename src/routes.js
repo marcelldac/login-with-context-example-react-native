@@ -2,16 +2,16 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import Login from './pages/Login';
 import Home from './pages/Home';
-import Pedidos from './pages/Pedidos';
+import UserProfile from './pages/UserProfile';
 
 const Stack = createNativeStackNavigator();
 
 function Routes(){
     return(
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{headerShown:false}}>
             <Stack.Screen name="Login" component={Login}/>
             <Stack.Screen name="Home" component={Home}/>
-            <Stack.Screen name="Pedidos" component={Pedidos}/>
+            <Stack.Screen name="UserProfile" component={UserProfile}/>
         </Stack.Navigator>
     )
 }
