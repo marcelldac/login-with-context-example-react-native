@@ -1,27 +1,21 @@
 import React from 'react';
-import {View, Text, StyleSheet, Button} from 'react-native';
+import {TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
-import {useNavigation} from '@react-navigation/native'
+import {HomeView} from './styles';
 
 export default function Home(){
   const navigation = useNavigation();
 
   return(
-    <View style={styles.container}>
-      <Text>Pagina Home</Text>
-
-      <Button 
-        title='Acessar Pedidos'
-        onPress={() => navigation.navigate("Pedidos")}
-      />
-    </View>
+    <HomeView>
+        <TouchableOpacity onPress={() => {navigation.push("UserProfile")}}>
+          <AntDesign
+            name="user"
+            size={20}
+          />
+        </TouchableOpacity>
+    </HomeView>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  }
-})
